@@ -41,6 +41,7 @@ Predict the expected freight cost for a vendor invoice using quantity, invoice v
 ### 2. Invoice Risk Flagging (Classification)
 
 **Objective:**
+
 Predict whether a vendor invoice should be flagged for manual approval due to abnormal cost, freight, or delivery patterns.
 
 **Why it matters:**
@@ -50,7 +51,7 @@ Predict whether a vendor invoice should be flagged for manual approval due to ab
 
 ---
 
-## Data Sources
+## 📊 Data Sources
 
 Data is stored in a relational SQLite database (`Inventory.db`) with the following tables:
 
