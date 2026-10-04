@@ -144,7 +144,7 @@ inventory-invoice-analytics/
     ├── README.md
     └── .gitignore
 
-## How to Run This Project
+## ⚙️ How to Run This Project
 
 1. Clone the repository:
 git clone [https://github.com/yourusername/inventory-invoice-analytics.git](https://github.com/yourusername/inventory-invoice-analytics.git)
