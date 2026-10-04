@@ -1,172 +1,254 @@
 # Vendor Invoice Intelligence System
+
 **Freight Cost Prediction & Invoice Risk Flagging**
 
+An end-to-end machine learning project designed to help finance and procurement teams predict freight costs and identify potentially high-risk vendor invoices for manual review.
+
 ## 📌 Table of Contents
-- <a href="#project-overview">Project Overview</a>
-- <a href="#business-objectives">Business Objectives</a>
-- <a href="#data-sources">Data Sources</a>
-- <a href="#eda">Exploratory Data Analysis</a>
-- <a href="#models-used">Models Used</a>
-- <a href="#metrics">Evaluation Metrics</a>
-- <a href="#application">Application</a>
-- <a href="#project-structure">Project Structure</a>
-- <a href="#how-to-run-this-project">How to Run This Project</a>
-- <a href="#author--contact">Author & Contact</a>
+
+* <a href="#project-overview">Project Overview</a>
+* <a href="#business-objectives">Business Objectives</a>
+* <a href="#data-sources">Data Sources</a>
+* <a href="#exploratory-data-analysis-eda">Exploratory Data Analysis</a>
+* <a href="#models-used">Models Used</a>
+* <a href="#evaluation-metrics">Evaluation Metrics</a>
+* <a href="#end-to-end-application">End-to-End Application</a>
+* <a href="#project-structure">Project Structure</a>
+* <a href="#how-to-run-this-project">How to Run This Project</a>
+* <a href="#author--contact">Author & Contact</a>
 
 ---
 
 <h2><a class="anchor" id="project-overview"></a>📌 Project Overview</h2>
 
-This project implements an **end-to-end machine learning system** designed to support finance teams by:
+This project implements an **end-to-end machine learning system** designed to support finance and procurement teams by:
 
 1. **Predicting expected freight cost** for vendor invoices.
 2. **Flagging high-risk invoices** that require manual review due to abnormal cost, freight, or operational patterns.
+
+The project combines **SQL, Python, Machine Learning, Statistical Analysis, and Streamlit** to demonstrate a complete data-to-deployment workflow.
 
 ---
 
 <h2><a class="anchor" id="business-objectives"></a>🎯 Business Objectives</h2>
 
-### 1. Freight Cost Prediction (Regression)
+### 1. Freight Cost Prediction — Regression
 
 **Objective:**
-Predict the expected freight cost for a vendor invoice using quantity, invoice value, and historical behavior.
+
+Predict the expected freight cost for a vendor invoice using invoice-level and historical purchase information.
 
 **Why it matters:**
-- Freight is a non-trivial component of landed cost.
-- Poor freight estimation impacts margin analysis and budgeting.
-- Early prediction improves procurement planning and vendor negotiation.
+
+* Freight is an important component of landed cost.
+* Poor freight estimation can affect margin analysis and budgeting.
+* Early prediction can support procurement planning and vendor negotiations.
 
 ---
 
-### 2. Invoice Risk Flagging (Classification)
+### 2. Invoice Risk Flagging — Classification
 
 **Objective:**
 
-Predict whether a vendor invoice should be flagged for manual approval due to abnormal cost, freight, or delivery patterns.
+Predict whether a vendor invoice should be flagged for manual review based on abnormal cost, freight, and operational patterns.
 
 **Why it matters:**
-- Manual invoice review does not scale.
-- Financial leakage often occurs in large or complex invoices.
-- Early risk detection improves audit efficiency and operational control.
+
+* Manual invoice review can be time-consuming.
+* Large or unusual invoices may require additional verification.
+* Automated risk detection can improve audit efficiency and operational control.
 
 ---
 
 ## 📊 Data Sources
 
-Data is stored in a relational SQLite database (`Inventory.db`) with the following tables:
+Data is stored in a relational **SQLite database (`Inventory.db`)** containing the following tables:
 
-- `vendor_invoice` - Invoice-level financial and timing data
-- `purchases` - Item-level purchase details
-- `purchase_prices` - Reference purchase prices
-- `begin_inventory`, `end_inventory` - Inventory snapshots
+* `vendor_invoice` — Invoice-level financial and timing data
+* `purchases` — Item-level purchase details
+* `purchase_prices` — Reference purchase prices
+* `begin_inventory` — Beginning inventory snapshots
+* `end_inventory` — Ending inventory snapshots
 
-SQL aggregation is used to generate invoice-level features.
+SQL aggregation is used to transform the underlying data into invoice-level features for analysis and machine learning.
 
 ---
 
 ## 🔍 Exploratory Data Analysis (EDA)
 
-EDA focuses on business-driven questions, such as:
-- Do flagged invoices have higher financial exposure?
-- Does freight scale linearly with quantity?
-- Does freight cost depend on quantity?
+EDA focuses on business-driven questions, including:
 
-Statistical tests (t-tests) are used to confirm that flagged invoices differ meaningfully from normal invoices.
+* Do flagged invoices have higher financial exposure?
+* Does freight cost increase with quantity?
+* Does freight cost depend on invoice characteristics?
+* Are there meaningful differences between flagged and normal invoices?
+
+Statistical tests, including **t-tests**, are used to evaluate whether observed differences between invoice groups are statistically significant.
 
 ---
 
 ## 🤖 Models Used
 
-### Regression (Freight Prediction)
-- Linear Regression (baseline)
-- Decision Tree Regressor
-- Random Forest Regressor (final model)
+### 📈 Regression — Freight Cost Prediction
 
-### Classification (Invoice Flagging)
-- Logistic Regression (baseline)
-- Decision Tree Classifier
-- Random Forest Classifier (final model with GridSearchCV)
+The following models were evaluated:
 
-Hyperparameter tuning is performed using GridSearchCV with F1-score to handle class imbalance.
+* Linear Regression — Baseline
+* Decision Tree Regressor
+* Random Forest Regressor — Final Model
+
+### 🚩 Classification — Invoice Risk Flagging
+
+The following models were evaluated:
+
+* Logistic Regression — Baseline
+* Decision Tree Classifier
+* Random Forest Classifier — Final Model
+
+**GridSearchCV** is used for hyperparameter tuning, with **F1-score** as the optimization metric to account for class imbalance.
 
 ---
 
 ## 📈 Evaluation Metrics
 
-### Freight Prediction
-- MAE
-- RMSE
-- R² Score
+### Freight Cost Prediction
 
-### Invoice Flagging
-- Accuracy
-- Precision, Recall, F1-score
-- Classification report
-- Feature importance analysis
+The regression models are evaluated using:
+
+* **MAE** — Mean Absolute Error
+* **RMSE** — Root Mean Squared Error
+* **R² Score** — Coefficient of Determination
+
+### Invoice Risk Flagging
+
+The classification models are evaluated using:
+
+* **Accuracy**
+* **Precision**
+* **Recall**
+* **F1-score**
+* **Classification Report**
+* **Feature Importance Analysis**
 
 ---
 
 ## 🚀 End-to-End Application
 
-A Streamlit application demonstrates the complete pipeline:
+A **Streamlit web application** demonstrates the complete machine learning pipeline.
 
-- Input invoice details
-- Predict expected freight
-- Flag invoices in real time
-- Provide human-readable explanations
+The application allows users to:
+
+* 📝 Enter invoice details
+* 📈 Predict expected freight cost
+* 🚩 Flag potentially high-risk invoices
+* 💡 View human-readable prediction explanations
+
+The application connects the trained machine learning models with a simple user interface for real-time predictions.
 
 ---
 
 ## 📁 Project Structure
 
-inventory-invoice-analytics/
+```text
+invoice_intelligence_machine_learning/
 ├── data/
-│   └── inventory.db
+│   └── Inventory.db
+│
 ├── freight_cost_prediction/
 │   ├── data_preprocessing.py
 │   ├── model_evaluation.py
 │   ├── train.py
 │   └── predict_freight.py
+│
 ├── invoice_flagging/
 │   ├── data_preprocessing.py
 │   ├── model_evaluation.py
 │   ├── train.py
 │   └── inference/
 │       └── predict_invoice_flag.py
-└── models/
-    ├── predict_freight_model.pkl
-    ├── invoice_flagging_model.pkl
-    └── scaler.pkl
-    ├── notebooks/
-    │   ├── Invoice Flagging.ipynb
-    │   └── Predict Freight Cost.ipynb
-    ├── app.py
-    ├── README.md
-    └── .gitignore
+│
+├── models/
+│   ├── predict_freight_model.pkl
+│   └── predict_flag_invoice.pkl
+│
+├── notebooks/
+│   ├── Invoice Flagging.ipynb
+│   └── Predict Freight Cost.ipynb
+│
+├── app.py
+├── README.md
+└── .gitignore
+```
+
+---
 
 ## ⚙️ How to Run This Project
 
-1. Clone the repository:
-git clone [https://github.com/yourusername/inventory-invoice-analytics.git](https://github.com/yourusername/inventory-invoice-analytics.git)
+### 1. Clone the Repository
 
-2. Train and Save Best Fit Models:
+```bash
+git clone https://github.com/samyakmda/invoice_intelligence_machine_learning.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd invoice_intelligence_machine_learning
+```
+
+### 3. Install Required Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Train the Models
+
+Train the freight cost prediction model:
+
+```bash
 python freight_cost_prediction/train.py
+```
+
+Train the invoice risk classification model:
+
+```bash
 python invoice_flagging/train.py
+```
 
-3. Test Models:
-python inference/predict_freight.py
-python inference/predict_invoice_flag.py
+### 5. Test the Models
 
-4. Open Application:
+Test freight cost prediction:
+
+```bash
+python freight_cost_prediction/predict_freight.py
+```
+
+Test invoice risk prediction:
+
+```bash
+python invoice_flagging/inference/predict_invoice_flag.py
+```
+
+### 6. Run the Streamlit Application
+
+```bash
 streamlit run app.py
+```
 
-Author & Contact
-Samyak Meshram
+The application will open in your browser.
 
-Data Scientist
+---
 
-✉️ Email: samyakmda@gmail.com
+## 👤 Author & Contact
 
-🔗 LinkedIn: 
+**Samyak Meshram**
+**Data Analyst**
 
-📁 Portfolio: 
+✉️ Email: [samyakmda@gmail.com](mailto:samyakmda@gmail.com)
+
+🔗 LinkedIn: https://linkedin.com/in/samyakmda
+
+📁 Portfolio: [Add your portfolio link]
+
+💻 GitHub: https://github.com/samyakmda
