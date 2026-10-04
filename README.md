@@ -64,7 +64,7 @@ SQL aggregation is used to generate invoice-level features.
 
 ---
 
-## Exploratory Data Analysis (EDA)
+## 🔍 Exploratory Data Analysis (EDA)
 
 EDA focuses on business-driven questions, such as:
 - Do flagged invoices have higher financial exposure?
@@ -75,7 +75,7 @@ Statistical tests (t-tests) are used to confirm that flagged invoices differ mea
 
 ---
 
-## Models Used
+## 🤖 Models Used
 
 ### Regression (Freight Prediction)
 - Linear Regression (baseline)
@@ -91,7 +91,7 @@ Hyperparameter tuning is performed using GridSearchCV with F1-score to handle cl
 
 ---
 
-## Evaluation Metrics
+## 📈 Evaluation Metrics
 
 ### Freight Prediction
 - MAE
@@ -106,7 +106,7 @@ Hyperparameter tuning is performed using GridSearchCV with F1-score to handle cl
 
 ---
 
-## End-to-End Application
+## 🚀 End-to-End Application
 
 A Streamlit application demonstrates the complete pipeline:
 
@@ -117,9 +117,8 @@ A Streamlit application demonstrates the complete pipeline:
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
-```text
 inventory-invoice-analytics/
 ├── data/
 │   └── inventory.db
@@ -148,7 +147,6 @@ inventory-invoice-analytics/
 ## How to Run This Project
 
 1. Clone the repository:
-```bash
 git clone [https://github.com/yourusername/inventory-invoice-analytics.git](https://github.com/yourusername/inventory-invoice-analytics.git)
 
 2. Train and Save Best Fit Models:
@@ -163,12 +161,12 @@ python inference/predict_invoice_flag.py
 streamlit run app.py
 
 Author & Contact
-Ayushi Mishra
+Samyak Meshram
 
 Data Scientist
 
-✉️ Email: techclasses0810@gmail.com
+✉️ Email: samyakmda@gmail.com
 
-🔗 LinkedIn
+🔗 LinkedIn: 
 
-📁 Portfolio
+📁 Portfolio: 
