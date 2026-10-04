@@ -2,24 +2,24 @@
 
 **Freight Cost Prediction & Invoice Risk Flagging**
 
-An end-to-end machine learning project designed to help finance and procurement teams predict freight costs and identify potentially high-risk vendor invoices for manual review.
-
 ## 📌 Table of Contents
 
-* <a href="#project-overview">Project Overview</a>
-* <a href="#business-objectives">Business Objectives</a>
-* <a href="#data-sources">Data Sources</a>
-* <a href="#exploratory-data-analysis-eda">Exploratory Data Analysis</a>
-* <a href="#models-used">Models Used</a>
-* <a href="#evaluation-metrics">Evaluation Metrics</a>
-* <a href="#end-to-end-application">End-to-End Application</a>
-* <a href="#project-structure">Project Structure</a>
-* <a href="#how-to-run-this-project">How to Run This Project</a>
-* <a href="#author--contact">Author & Contact</a>
+* [Project Overview](#project-overview)
+* [Business Objectives](#business-objectives)
+* [Data Sources](#data-sources)
+* [Exploratory Data Analysis](#eda)
+* [Models Used](#models-used)
+* [Evaluation Metrics](#metrics)
+* [End-to-End Application](#application)
+* [Project Structure](#project-structure)
+* [How to Run This Project](#how-to-run-this-project)
+* [Author & Contact](#author--contact)
 
 ---
 
-<h2><a class="anchor" id="project-overview"></a>📌 Project Overview</h2>
+<a id="project-overview"></a>
+
+## 📌 Project Overview
 
 This project implements an **end-to-end machine learning system** designed to support finance and procurement teams by:
 
@@ -30,7 +30,9 @@ The project combines **SQL, Python, Machine Learning, Statistical Analysis, and 
 
 ---
 
-<h2><a class="anchor" id="business-objectives"></a>🎯 Business Objectives</h2>
+<a id="business-objectives"></a>
+
+## 🎯 Business Objectives
 
 ### 1. Freight Cost Prediction — Regression
 
@@ -43,8 +45,6 @@ Predict the expected freight cost for a vendor invoice using invoice-level and h
 * Freight is an important component of landed cost.
 * Poor freight estimation can affect margin analysis and budgeting.
 * Early prediction can support procurement planning and vendor negotiations.
-
----
 
 ### 2. Invoice Risk Flagging — Classification
 
@@ -60,6 +60,8 @@ Predict whether a vendor invoice should be flagged for manual review based on ab
 
 ---
 
+<a id="data-sources"></a>
+
 ## 📊 Data Sources
 
 Data is stored in a relational **SQLite database (`Inventory.db`)** containing the following tables:
@@ -74,6 +76,8 @@ SQL aggregation is used to transform the underlying data into invoice-level feat
 
 ---
 
+<a id="eda"></a>
+
 ## 🔍 Exploratory Data Analysis (EDA)
 
 EDA focuses on business-driven questions, including:
@@ -86,6 +90,8 @@ EDA focuses on business-driven questions, including:
 Statistical tests, including **t-tests**, are used to evaluate whether observed differences between invoice groups are statistically significant.
 
 ---
+
+<a id="models-used"></a>
 
 ## 🤖 Models Used
 
@@ -108,6 +114,8 @@ The following models were evaluated:
 **GridSearchCV** is used for hyperparameter tuning, with **F1-score** as the optimization metric to account for class imbalance.
 
 ---
+
+<a id="metrics"></a>
 
 ## 📈 Evaluation Metrics
 
@@ -132,6 +140,8 @@ The classification models are evaluated using:
 
 ---
 
+<a id="application"></a>
+
 ## 🚀 End-to-End Application
 
 A **Streamlit web application** demonstrates the complete machine learning pipeline.
@@ -146,6 +156,8 @@ The application allows users to:
 The application connects the trained machine learning models with a simple user interface for real-time predictions.
 
 ---
+
+<a id="project-structure"></a>
 
 ## 📁 Project Structure
 
@@ -177,10 +189,13 @@ invoice_intelligence_machine_learning/
 │
 ├── app.py
 ├── README.md
+├── requirements.txt
 └── .gitignore
 ```
 
 ---
+
+<a id="how-to-run-this-project"></a>
 
 ## ⚙️ How to Run This Project
 
@@ -240,6 +255,8 @@ The application will open in your browser.
 
 ---
 
+<a id="author--contact"></a>
+
 ## 👤 Author & Contact
 
 **Samyak Meshram**
@@ -249,6 +266,6 @@ The application will open in your browser.
 
 🔗 LinkedIn: https://linkedin.com/in/samyakmda
 
-📁 Portfolio: [Add your portfolio link]
-
 💻 GitHub: https://github.com/samyakmda
+
+📁 Portfolio: Add your portfolio link here
