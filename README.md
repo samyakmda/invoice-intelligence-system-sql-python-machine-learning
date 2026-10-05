@@ -263,5 +263,6 @@ The application will open in your browser.
 **Data Analyst**
 
 ✉️ Email: [samyakmda@gmail.com](mailto:samyakmda@gmail.com)
+
 🔗 [LinkedIn](https://www.linkedin.com/in/samyakmda/)  
 🔗 [Portfolio](https://samyakmda.github.io/)
