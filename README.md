@@ -262,7 +262,6 @@ The application will open in your browser.
 **Samyak Meshram**
 **Data Analyst**
 
-✉️ Email: [samyakmda@gmail.com](mailto:samyakmda@gmail.com)
-
+✉️ Email: [samyakmda@gmail.com](mailto:samyakmda@gmail.com)                    
 🔗 [LinkedIn](https://www.linkedin.com/in/samyakmda/)  
 🔗 [Portfolio](https://samyakmda.github.io/)
