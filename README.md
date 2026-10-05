@@ -269,3 +269,6 @@ The application will open in your browser.
 💻 GitHub: https://github.com/samyakmda
 
 📁 Portfolio: Add your portfolio link here
+
+🔗 [LinkedIn](https://www.linkedin.com/in/samyakmda/)  
+🔗 [Portfolio](https://samyakmda.github.io/)
